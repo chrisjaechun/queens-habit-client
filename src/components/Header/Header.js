@@ -24,8 +24,11 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
   <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
-      react-auth-template
+    <Navbar.Brand href="#" className="navbar">
+      <img src="https://i.imgur.com/Ts5GwnS.png" width="60" height="60"/>
+      <div className="logo">
+        QUEENS HABIT
+      </div>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
