@@ -2,10 +2,10 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const ItemForm = ({ handleSubmit, handleInputChange, item }) => (
+const ExperienceForm = ({ handleSubmit, handleInputChange, experience }) => (
   <Form onSubmit={handleSubmit}>
     <Form.Group controlId="what">
-      <Form.Label>What?</Form.Label>
+      <Form.Label>Experience:</Form.Label>
       <Form.Control
         required
         name="what"
@@ -16,7 +16,7 @@ const ItemForm = ({ handleSubmit, handleInputChange, item }) => (
       />
     </Form.Group>
     <Form.Group controlId="where">
-      <Form.Label>Where?</Form.Label>
+      <Form.Label>Location:</Form.Label>
       <Form.Control
         required
         name="where"
@@ -27,11 +27,11 @@ const ItemForm = ({ handleSubmit, handleInputChange, item }) => (
       />
     </Form.Group>
     <Form.Group controlId="notes">
-      <Form.Label>Notes</Form.Label>
+      <Form.Label>Notes:</Form.Label>
       <Form.Control
         required
         name="notes"
-        type="text"
+        as="textarea"
         placeholder="What should we know?"
         value={experience.notes}
         onChange={handleInputChange}
@@ -46,4 +46,4 @@ const ItemForm = ({ handleSubmit, handleInputChange, item }) => (
   </Form>
 )
 
-export default ItemForm
+export default ExperienceForm

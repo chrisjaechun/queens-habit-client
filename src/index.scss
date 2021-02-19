@@ -1,10 +1,15 @@
 $primary: #0085ff;
+$secondary: #fac001;
 
 @import '~bootstrap/scss/bootstrap';
 
 .navbar {
   display: flex
 }
+
+// body {
+//   background-color: $secondary;
+// }
 
 .logo {
   font-family: 'Rufina', serif;
