@@ -65,7 +65,7 @@ class SubmitExperience extends Component {
       <Fragment>
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
-            <h2>Share an experience!</h2>
+            <h1 className="text-center">Share an experience!</h1>
             <ExperienceForm
               experience={this.state.experience}
               handleSubmit={this.handleSubmit}

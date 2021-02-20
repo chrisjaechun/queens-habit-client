@@ -66,8 +66,10 @@ class ShowExperience extends Component {
     if (experience === null) {
       experienceJsx = <img src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
     } else {
+      const { user } = this.props
       experienceJsx = (
-        <Card style={{ width: '60rem' }}>
+        <Card key ={experience.id} className="text-center">
+          <Card.Header>Featured</Card.Header>
           <Card.Body>
             <Card.Title>{experience.what}</Card.Title>
             <Card.Text>
@@ -78,6 +80,7 @@ class ShowExperience extends Component {
             </Card.Text>
             <Button onClick={this.deleteExperience}>Delete</Button>
           </Card.Body>
+          <Card.Footer className="text-muted">Submitted by {user.email}</Card.Footer>
         </Card>
         // <Fragment>
         //   <h2>{experience.what}</h2>
@@ -89,7 +92,7 @@ class ShowExperience extends Component {
       <Fragment>
         <div className="row show-experience">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
-            <h1 style={{ textAlign: 'center' }}>Here it is!</h1>
+            <h1 className="text-center">Your Experiences!</h1>
             {experienceJsx}
           </div>
         </div>

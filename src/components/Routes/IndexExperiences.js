@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Link } from 'react-router-dom'
@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card'
 class IndexExperiences extends Component {
   constructor (props) {
     super(props)
+
     this.state = {
       experiences: null
     }
@@ -15,13 +16,13 @@ class IndexExperiences extends Component {
   componentDidMount () {
     const { user, msgAlert } = this.props
     axios({
-      url: apiUrl + '/experiences/',
-      method: 'get',
+      url: `${apiUrl}/experiences/`,
+      method: 'GET',
       headers: {
         'Authorization': `Token ${user.token}`
       }
     })
-      .then(res => this.setState({ experiences: res.data.experiences }))
+      .then(res => this.setState({ experiences: res.data }))
       .catch(error => {
         msgAlert({
           heading: 'What?',
@@ -34,34 +35,37 @@ class IndexExperiences extends Component {
     let experiencesJsx
     if (this.state.experiences === null) {
       experiencesJsx = <img src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
-    } else if (this.state.experiences.length === 0) {
-      experiencesJsx = 'You should share some experiences!'
+      // console.log(this.state.experiences)
+    // } else if (this.state.experiences.length === 0) {
+    //   experiencesJsx = 'You should share some experiences!'
     } else {
       const experiencesList = this.state.experiences.map(experience => (
-        <Card key={experience._id} className = "d-inline-flex" style={{ width: '50rem' }}>
-          <Link to={'/experiences/'} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Card key={experience.id}>
+          <Link to={`/experiences/${experience.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
             <Card.Body>
               <Card.Title>{experience.what}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Where: {experience.where}</Card.Subtitle>
+              <Card.Text>
+              Where: {experience.where}
+              </Card.Text>
             </Card.Body>
           </Link>
         </Card>
       ))
       experiencesJsx = (
-        <ul>
-          {experiencesList}
-        </ul>
+        <div>
+          { experiencesList }
+        </div>
       )
     }
     return (
-      <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h2 style={{ textAlign: 'center' }}>Here are your submitted experiences!</h2>
-          <div className="col-sm-4 col-md-8 col-lg-12 mx-auto mt-5">
+      <Fragment>
+        <div className="row">
+          <div className="col-sm-10 col-md-8 mx-auto mt-5">
+            <h1 className="text-center">Here are your submitted experiences!</h1>
             {experiencesJsx}
           </div>
         </div>
-      </div>
+      </Fragment>
     )
   }
 }
