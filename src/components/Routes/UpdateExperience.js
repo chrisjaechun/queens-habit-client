@@ -61,7 +61,7 @@ class UpdateExperience extends Component {
       <Fragment>
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
-            <h2>Update Your Experience</h2>
+            <h1 className="text-center">Update Your Experience</h1>
             <UpdateForm
               experience={this.state.experience}
               handleSubmit={this.handleSubmit}

@@ -78,7 +78,7 @@ class ShowExperience extends Component {
               Notes: {experience.notes}
             </Card.Text>
             <Button onClick={this.deleteExperience}>Delete</Button>
-            <Button variant="outline-secondary"><Link to={`/update-experience/${experience.id}`}>Update Experience</Link></Button>
+            <Button variant="secondary"><Link to={`/update-experience/${experience.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>Update Experience</Link></Button>
           </Card.Body>
           <Card.Footer className="text-muted">Submitted by {user.email}</Card.Footer>
         </Card>

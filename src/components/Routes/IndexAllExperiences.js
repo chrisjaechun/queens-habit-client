@@ -22,7 +22,10 @@ class IndexAllExperiences extends Component {
         'Authorization': `Token ${user.token}`
       }
     })
-      .then(res => this.setState({ experiences: res.data }))
+      .then(res => {
+        this.setState({ experiences: res.data })
+        console.log(this.state.experiences)
+      })
       .catch(error => {
         msgAlert({
           heading: 'What?',
