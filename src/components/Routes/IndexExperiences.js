@@ -35,9 +35,8 @@ class IndexExperiences extends Component {
     let experiencesJsx
     if (this.state.experiences === null) {
       experiencesJsx = <img src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
-      // console.log(this.state.experiences)
-    // } else if (this.state.experiences.length === 0) {
-    //   experiencesJsx = 'You should share some experiences!'
+    } else if (this.state.experiences.length === 0) {
+      experiencesJsx = <p className="text-center">Yeah, fine, a magician never reveals their secrets.</p>
     } else {
       const experiencesList = this.state.experiences.map(experience => (
         <Card key={experience.id}>

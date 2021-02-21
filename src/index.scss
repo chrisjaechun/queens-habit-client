@@ -3,8 +3,19 @@ $secondary: #fac001;
 
 @import '~bootstrap/scss/bootstrap';
 
+
 .navbar {
   display: flex
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("https://i.imgur.com/5vscXG5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  // background-color: $primary;
 }
 
 .logo {

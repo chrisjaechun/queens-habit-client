@@ -12,6 +12,8 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import SubmitExperience from './components/Routes/SubmitExperience'
 import ShowExperience from './components/Routes/ShowExperience'
 import IndexExperiences from './components/Routes/IndexExperiences'
+import UpdateExperience from './components/Routes/UpdateExperience'
+import IndexAllExperiences from './components/Routes/IndexAllExperiences'
 
 class App extends Component {
   constructor (props) {
@@ -62,10 +64,16 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
+          <AuthenticatedRoute exact path='/experiences-all/' user={user} component={IndexAllExperiences} render={() => (
+            <IndexAllExperiences msgAlert={this.msgAlert} user={user}/>
+          )} />
           <AuthenticatedRoute path='/submit-experience' user={user} component={SubmitExperience} render={({ match }) => (
             <SubmitExperience msgAlert={this.msgAlert} user={user} match={match} />
           )} />
-          <AuthenticatedRoute path='/experiences/:id' user={user} component={ShowExperience} render={({ match }) => (
+          <AuthenticatedRoute user={user} path='/update-experience/:id' render={({ match }) => (
+            <UpdateExperience msgAlert={this.msgAlert} user={user} match={match}/>
+          )} />
+          <AuthenticatedRoute path='/experiences/:id/' user={user} render={({ match }) => (
             <ShowExperience msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
           <AuthenticatedRoute exact path='/experiences/' user={user} component={IndexExperiences} render={() => (

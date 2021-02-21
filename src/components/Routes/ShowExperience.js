@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import Button from 'react-bootstrap/Button'
@@ -34,7 +34,6 @@ class ShowExperience extends Component {
   }
   deleteExperience = () => {
     const { user, msgAlert } = this.props
-    console.log(this.state)
     axios({
       url: `${apiUrl}/experiences/${this.state.experience.id}/`,
       method: 'delete',
@@ -45,7 +44,7 @@ class ShowExperience extends Component {
       .then(() => this.setState({ deleted: true }))
       .then(() => msgAlert({
         heading: 'Destroyed!',
-        message: `${this.state.experience.what} has been terminated`,
+        message: `Sounds like ${this.state.experience.what} needs a rain check.`,
         variant: 'success'
       }))
       .catch(error => {
@@ -61,10 +60,10 @@ class ShowExperience extends Component {
     let experienceJsx
     const { experience, deleted } = this.state
     if (deleted) {
-      return <Redirect to="/experiences"/>
+      return <Redirect to="/experiences/"/>
     }
     if (experience === null) {
-      experienceJsx = <img src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
+      experienceJsx = <img className="text-center" src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
     } else {
       const { user } = this.props
       experienceJsx = (
@@ -79,18 +78,15 @@ class ShowExperience extends Component {
               Notes: {experience.notes}
             </Card.Text>
             <Button onClick={this.deleteExperience}>Delete</Button>
+            <Button variant="outline-secondary"><Link to={`/update-experience/${experience.id}`}>Update Experience</Link></Button>
           </Card.Body>
           <Card.Footer className="text-muted">Submitted by {user.email}</Card.Footer>
         </Card>
-        // <Fragment>
-        //   <h2>{experience.what}</h2>
-        //   {/* <Button variant="outline-primary"><Link to={`/update-experience/${experience.id}`}>Update Experience</Link></Button> */}
-        // </Fragment>
       )
     }
     return (
       <Fragment>
-        <div className="row show-experience">
+        <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
             <h1 className="text-center">Your Experiences!</h1>
             {experienceJsx}
