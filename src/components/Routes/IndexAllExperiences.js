@@ -37,7 +37,7 @@ class IndexAllExperiences extends Component {
   render () {
     let experiencesJsx
     if (this.state.experiences === null) {
-      experiencesJsx = <img className="mr-met-loading" src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
+      experiencesJsx = <h1 className="text-center">Loading...</h1>
     } else {
       const experiencesList = this.state.experiences.slice(0).reverse().map(experiences => (
         <Card key={experiences.id} className="card">

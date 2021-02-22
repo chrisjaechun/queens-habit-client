@@ -34,7 +34,7 @@ class IndexExperiences extends Component {
   render () {
     let experiencesJsx
     if (this.state.experiences === null) {
-      experiencesJsx = <img className="mr-met-loading" src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
+      experiencesJsx = <h1 className="text-center">Loading...</h1>
     } else if (this.state.experiences.length === 0) {
       experiencesJsx = <h3 className="text-center">Yeah, fine, a magician never reveals their secrets.</h3>
     } else {

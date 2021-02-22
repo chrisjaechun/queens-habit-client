@@ -63,7 +63,7 @@ class ShowExperience extends Component {
       return <Redirect to="/experiences/"/>
     }
     if (experience === null) {
-      experienceJsx = <img className="mr-met-loading" src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
+      experienceJsx = <h1 className="text-center">Loading...</h1>
     } else {
       const { user } = this.props
       experienceJsx = (
