@@ -36,10 +36,10 @@ class IndexExperiences extends Component {
     if (this.state.experiences === null) {
       experiencesJsx = <img src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
     } else if (this.state.experiences.length === 0) {
-      experiencesJsx = <p className="text-center">Yeah, fine, a magician never reveals their secrets.</p>
+      experiencesJsx = <h3 className="text-center">Yeah, fine, a magician never reveals their secrets.</h3>
     } else {
       const experiencesList = this.state.experiences.map(experience => (
-        <Card key={experience.id}>
+        <Card key={experience.id} className="card">
           <Link to={`/experiences/${experience.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
             <Card.Body>
               <Card.Title>{experience.what}</Card.Title>
@@ -60,7 +60,7 @@ class IndexExperiences extends Component {
       <Fragment>
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
-            <h1 className="text-center">Here are your submitted experiences!</h1>
+            <h1 className="text-center">MEMORY LANE</h1>
             {experiencesJsx}
           </div>
         </div>

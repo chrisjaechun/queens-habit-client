@@ -40,7 +40,7 @@ class IndexAllExperiences extends Component {
       experiencesJsx = <img src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
     } else {
       const experiencesList = this.state.experiences.map(experiences => (
-        <Card key={experiences.id}>
+        <Card key={experiences.id} className="card">
           <Card.Body>
             <Card.Title>{experiences.what}</Card.Title>
             <Card.Text>
@@ -49,7 +49,7 @@ class IndexAllExperiences extends Component {
             <Card.Text>
               Notes: {experiences.notes}
             </Card.Text>
-            <Card.Footer className="text-muted">Submitted by {experiences.owner}</Card.Footer>
+            <Card.Footer className="text-footer">Submitted by {experiences.owner}</Card.Footer>
           </Card.Body>
         </Card>
       ))
@@ -63,7 +63,7 @@ class IndexAllExperiences extends Component {
       <Fragment>
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
-            <h1 className="text-center">THE WORLD IS YOURS</h1>
+            <h1 className="text-center mx-auto">THE WORLD IS YOURS</h1>
             {experiencesJsx}
           </div>
         </div>

@@ -25,12 +25,14 @@ class SignIn extends Component {
     event.preventDefault()
 
     const { msgAlert, history, setUser } = this.props
-
     signIn(this.state)
-      .then(res => setUser(res.data.user))
+      .then(res => {
+        setUser(res.data.user)
+        return res
+      })
       .then(() => msgAlert({
         heading: 'Sign In Success',
-        message: messages.signInSuccess,
+        message: `Welcome ${this.state.email}!`,
         variant: 'success'
       }))
       .then(() => history.push('/'))
@@ -50,7 +52,7 @@ class SignIn extends Component {
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h1 className="text-center">Sign In</h1>
+          <h1 className="text-center">SIGN IN</h1>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
@@ -70,7 +72,7 @@ class SignIn extends Component {
                 name="password"
                 value={password}
                 type="password"
-                placeholder="Password"
+                placeholder="Password (at least 5 characters)"
                 onChange={this.handleChange}
               />
             </Form.Group>

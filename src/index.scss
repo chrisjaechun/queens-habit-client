@@ -4,22 +4,76 @@ $secondary: #fac001;
 @import '~bootstrap/scss/bootstrap';
 
 
+// .navbar-header {
+//   background-color: #000000;
+// }
+
 .navbar {
-  display: flex
+  display: flex;
+  font-family: 'Rufina', serif;
+}
+
+.nav-link {
+  color: #000000;
+  font-weight: bold;
+}
+
+.nav-link-active {
+  color: $primary;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  background-image: url("https://i.imgur.com/5vscXG5.png");
+  padding: 50px;
+  background-image:
+    url("https://i.imgur.com/1VEnZ9z.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  // background-color: $primary;
+  background-size: cover;
 }
 
 .logo {
   font-family: 'Rufina', serif;
-  font-size: 25px;
+  color: #ffffff;
+  text-shadow: 2px 2px 3px #000000;
+  font-size: 30px;
   margin-left: 10px
+}
+
+.row {
+  font-family: 'Rufina', serif;
+}
+
+.text-center {
+  font-family: 'Karla', serif;
+  font-size: 50px;
+  color: #ffffff;
+  text-shadow: 2px 2px 3px #000000;
+  margin-bottom: 35px;
+}
+
+.form-group {
+  color: #ffffff;
+}
+
+.card {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 10px
+}
+
+.text-footer {
+  color: $secondary
+}
+
+.update-button {
+  margin-right: 5px;
+}
+
+.mr-met-loading {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

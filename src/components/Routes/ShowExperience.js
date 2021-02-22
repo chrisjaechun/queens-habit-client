@@ -63,11 +63,11 @@ class ShowExperience extends Component {
       return <Redirect to="/experiences/"/>
     }
     if (experience === null) {
-      experienceJsx = <img className="text-center" src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
+      experienceJsx = <img className="mr-met-loading" src="https://media.giphy.com/media/qShKy3KNSkzVIxBSiI/giphy.gif" alt="mr-met-dancing-while-we-wait" />
     } else {
       const { user } = this.props
       experienceJsx = (
-        <Card key ={experience.id} className="text-center">
+        <Card key ={experience.id} className="card">
           <Card.Header>Featured</Card.Header>
           <Card.Body>
             <Card.Title>{experience.what}</Card.Title>
@@ -77,10 +77,10 @@ class ShowExperience extends Component {
             <Card.Text>
               Notes: {experience.notes}
             </Card.Text>
-            <Button onClick={this.deleteExperience}>Delete</Button>
-            <Button variant="secondary"><Link to={`/update-experience/${experience.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>Update Experience</Link></Button>
+            <Button className="update-button"><Link to={`/update-experience/${experience.id}`} style={{ textDecoration: 'none', color: '#ffffff' }}>Update Experience</Link></Button>
+            <Button variant="danger" style={{ textDecoration: 'none', color: '#ffffff' }} onClick={this.deleteExperience}>Delete</Button>
           </Card.Body>
-          <Card.Footer className="text-muted">Submitted by {user.email}</Card.Footer>
+          <Card.Footer className="text-footer">Submitted by {user.email}</Card.Footer>
         </Card>
       )
     }
@@ -88,7 +88,7 @@ class ShowExperience extends Component {
       <Fragment>
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
-            <h1 className="text-center">Your Experiences!</h1>
+            <h1 className="text-center">IT WAS WRITTEN</h1>
             {experienceJsx}
           </div>
         </div>
