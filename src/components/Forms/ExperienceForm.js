@@ -32,7 +32,7 @@ const ExperienceForm = ({ handleSubmit, handleInputChange, experience }) => (
         required
         name="notes"
         as="textarea"
-        placeholder="What should we know?"
+        placeholder="What should we know? (500 character limit)"
         value={experience.notes}
         onChange={handleInputChange}
       />

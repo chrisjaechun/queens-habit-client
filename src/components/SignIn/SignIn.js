@@ -72,7 +72,7 @@ class SignIn extends Component {
                 name="password"
                 value={password}
                 type="password"
-                placeholder="Password (at least 5 characters)"
+                placeholder="Password"
                 onChange={this.handleChange}
               />
             </Form.Group>

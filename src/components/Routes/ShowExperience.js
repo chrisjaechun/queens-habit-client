@@ -70,7 +70,7 @@ class ShowExperience extends Component {
         <Card key ={experience.id} className="card">
           <Card.Header>Featured</Card.Header>
           <Card.Body>
-            <Card.Title>{experience.what}</Card.Title>
+            <Card.Title><h3>{experience.what}</h3></Card.Title>
             <Card.Text>
               Where: {experience.where}
             </Card.Text>

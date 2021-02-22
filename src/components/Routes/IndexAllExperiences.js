@@ -42,7 +42,7 @@ class IndexAllExperiences extends Component {
       const experiencesList = this.state.experiences.map(experiences => (
         <Card key={experiences.id} className="card">
           <Card.Body>
-            <Card.Title>{experiences.what}</Card.Title>
+            <Card.Title><h3>{experiences.what}</h3></Card.Title>
             <Card.Text>
               Where: {experiences.where}
             </Card.Text>

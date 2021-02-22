@@ -14,6 +14,7 @@ import ShowExperience from './components/Routes/ShowExperience'
 import IndexExperiences from './components/Routes/IndexExperiences'
 import UpdateExperience from './components/Routes/UpdateExperience'
 import IndexAllExperiences from './components/Routes/IndexAllExperiences'
+import LandingPage from './components/LandingPage/LandingPage'
 
 class App extends Component {
   constructor (props) {
@@ -58,6 +59,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <LandingPage user={user}/>
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
