@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 const UpdateForm = ({ handleSubmit, handleInputChange, experience }) => (
   <Form onSubmit={handleSubmit}>
     <Form.Group controlId="what">
-      <Form.Label>Experience:</Form.Label>
+      <Form.Label>Update Experience:</Form.Label>
       <Form.Control
         required
         name="what"
@@ -16,7 +16,7 @@ const UpdateForm = ({ handleSubmit, handleInputChange, experience }) => (
       />
     </Form.Group>
     <Form.Group controlId="where">
-      <Form.Label>Location:</Form.Label>
+      <Form.Label>Update Location:</Form.Label>
       <Form.Control
         required
         name="where"
@@ -27,7 +27,7 @@ const UpdateForm = ({ handleSubmit, handleInputChange, experience }) => (
       />
     </Form.Group>
     <Form.Group controlId="notes">
-      <Form.Label>Notes:</Form.Label>
+      <Form.Label>Update Notes:</Form.Label>
       <Form.Control
         required
         name="notes"

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
-import ExperienceForm from '../Forms/ExperienceForm'
+import UpdateForm from '../Forms/UpdateForm'
 
 class UpdateExperience extends Component {
   constructor (props) {
@@ -62,7 +62,7 @@ class UpdateExperience extends Component {
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
             <h1 className="text-center">REWIND</h1>
-            <ExperienceForm
+            <UpdateForm
               experience={this.state.experience}
               handleSubmit={this.handleSubmit}
               handleInputChange={this.handleInputChange}

@@ -4,23 +4,23 @@ import Navbar from 'react-bootstrap/Navbar'
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link className="nav-link" activeClassName="nav-link-active" href="#experiences-all">Home</Nav.Link>
-    <Nav.Link className="nav-link" activeClassName="nav-link-active" href="#submit-experience">Submit Experience</Nav.Link>
-    <Nav.Link className="nav-link" activeClassName="nav-link-active" href="#experiences">My Experiences</Nav.Link>
-    <Nav.Link className="nav-link" activeClassName="nav-link-active" href="#change-password">Change Password</Nav.Link>
-    <Nav.Link className="nav-link" activeClassName="nav-link-active" href="#sign-out">Sign Out</Nav.Link>
+    <Nav.Link className="nav-link" href="#experiences-all">Home</Nav.Link>
+    <Nav.Link className="nav-link" href="#submit-experience">Submit Experience</Nav.Link>
+    <Nav.Link className="nav-link" href="#experiences">My Experiences</Nav.Link>
+    <Nav.Link className="nav-link" href="#change-password">Change Password</Nav.Link>
+    <Nav.Link className="nav-link" href="#sign-out">Sign Out</Nav.Link>
   </Fragment>
 )
 
 const unauthenticatedOptions = (
   <Fragment>
-    <Nav.Link className="nav-link" activeClassName="nav-link-active" href="#sign-up">Sign Up</Nav.Link>
-    <Nav.Link className="nav-link" activeClassName="nav-link-active" href="#sign-in">Sign In</Nav.Link>
+    <Nav.Link className="nav-link" href="#sign-up">Sign Up</Nav.Link>
+    <Nav.Link className="nav-link" href="#sign-in">Sign In</Nav.Link>
   </Fragment>
 )
 
 const Header = ({ user }) => (
-  <Navbar expand="md" fixed="top" className="navbar-header">
+  <Navbar bg="transparent" expand="md" fixed="top" className="navbar-header">
     <Navbar.Brand href="#" className="navbar">
       <img src="https://i.imgur.com/Ts5GwnS.png" width="60" height="60"/>
       <div className="logo">

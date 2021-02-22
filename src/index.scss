@@ -1,5 +1,6 @@
 $primary: #0085ff;
 $secondary: #fac001;
+$font: #ffffff;
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -14,7 +15,6 @@ $secondary: #fac001;
 }
 
 .nav-link {
-  color: #000000;
   font-weight: bold;
 }
 
@@ -59,7 +59,7 @@ body {
 
 .card {
   color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   margin: 10px
 }
 
