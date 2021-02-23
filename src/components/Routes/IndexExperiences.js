@@ -34,9 +34,9 @@ class IndexExperiences extends Component {
   render () {
     let experiencesJsx
     if (this.state.experiences === null) {
-      experiencesJsx = <h1 className="text-center">Loading...</h1>
+      experiencesJsx = <h1 className="text-center page-message">Loading...</h1>
     } else if (this.state.experiences.length === 0) {
-      experiencesJsx = <h3 className="text-center">Yeah, fine, a magician never reveals their secrets.</h3>
+      experiencesJsx = <p className="text-center empty-index">Share some experiences!</p>
     } else {
       const experiencesList = this.state.experiences.map(experience => (
         <Card key={experience.id} className="card">
@@ -60,7 +60,7 @@ class IndexExperiences extends Component {
       <Fragment>
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
-            <h1 className="text-center">MEMORY LANE</h1>
+            <h1 className="text-center page-message">MEMORY LANE</h1>
             {experiencesJsx}
           </div>
         </div>

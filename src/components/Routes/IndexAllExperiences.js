@@ -37,7 +37,7 @@ class IndexAllExperiences extends Component {
   render () {
     let experiencesJsx
     if (this.state.experiences === null) {
-      experiencesJsx = <h1 className="text-center">Loading...</h1>
+      experiencesJsx = <h1 className="text-center page-message">Loading...</h1>
     } else {
       const experiencesList = this.state.experiences.slice(0).reverse().map(experiences => (
         <Card key={experiences.id} className="card">
@@ -63,7 +63,7 @@ class IndexAllExperiences extends Component {
       <Fragment>
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
-            <h1 className="text-center mx-auto">THE WORLD IS YOURS</h1>
+            <h1 className="text-center page-message">THE WORLD IS YOURS</h1>
             {experiencesJsx}
           </div>
         </div>

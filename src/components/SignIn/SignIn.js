@@ -52,7 +52,7 @@ class SignIn extends Component {
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h1 className="text-center">SIGN IN</h1>
+          <h1 className="text-center page-message">SIGN IN</h1>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>

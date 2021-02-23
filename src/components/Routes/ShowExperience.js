@@ -63,7 +63,7 @@ class ShowExperience extends Component {
       return <Redirect to="/experiences/"/>
     }
     if (experience === null) {
-      experienceJsx = <h1 className="text-center">Loading...</h1>
+      experienceJsx = <h1 className="text-center page-message">Loading...</h1>
     } else {
       const { user } = this.props
       experienceJsx = (
@@ -88,7 +88,7 @@ class ShowExperience extends Component {
       <Fragment>
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
-            <h1 className="text-center">IT WAS WRITTEN</h1>
+            <h1 className="text-center page-message">IT WAS WRITTEN</h1>
             {experienceJsx}
           </div>
         </div>

@@ -45,13 +45,14 @@ body {
   font-family: 'Rufina', serif;
 }
 
-.text-center {
+.page-message {
   font-family: 'Karla', serif;
   font-size: 50px;
   color: #ffffff;
   text-shadow: 2px 2px 3px #000000;
   margin-bottom: 35px;
 }
+
 
 .form-group {
   color: #ffffff;
@@ -84,9 +85,9 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.mr-met-loading {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+.empty-index {
+  font-family: 'Rufina', serif;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 25px;
 }
