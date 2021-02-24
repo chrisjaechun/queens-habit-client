@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import UpdateForm from '../Forms/UpdateForm'
@@ -10,9 +10,9 @@ class UpdateExperience extends Component {
 
     this.state = {
       experience: {
-        what: '',
-        where: '',
-        notes: ''
+        what: this.props.location.state.what,
+        where: this.props.location.state.where,
+        notes: this.props.location.state.notes
       },
       updated: false
     }
@@ -73,4 +73,4 @@ class UpdateExperience extends Component {
     )
   }
 }
-export default UpdateExperience
+export default withRouter(UpdateExperience)

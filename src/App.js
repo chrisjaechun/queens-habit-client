@@ -74,7 +74,7 @@ class App extends Component {
           <AuthenticatedRoute path='/submit-experience' user={user} component={SubmitExperience} render={({ match }) => (
             <SubmitExperience msgAlert={this.msgAlert} user={user} match={match} />
           )} />
-          <AuthenticatedRoute user={user} path='/update-experience/:id' render={({ match }) => (
+          <AuthenticatedRoute path='/update-experience/:id' user={user} component={ShowExperience} render={({ match }) => (
             <UpdateExperience msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
           <AuthenticatedRoute path='/experiences/:id/' user={user} render={({ match }) => (

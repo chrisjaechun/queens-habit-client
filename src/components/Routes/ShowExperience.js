@@ -77,7 +77,18 @@ class ShowExperience extends Component {
             <Card.Text>
               Notes: {experience.notes}
             </Card.Text>
-            <Button className="update-button"><Link to={`/update-experience/${experience.id}`} style={{ textDecoration: 'none', color: '#ffffff' }}>Update Experience</Link></Button>
+            <Button className="update-button">
+              <Link to={{
+                pathname: `/update-experience/${experience.id}/`,
+                state: {
+                  what: experience.what,
+                  where: experience.where,
+                  notes: experience.notes
+                } }}
+              style={{ textDecoration: 'none', color: '#ffffff' }}>
+                Update Experience
+              </Link>
+            </Button>
             <Button variant="danger" style={{ textDecoration: 'none', color: '#ffffff' }} onClick={this.deleteExperience}>Delete</Button>
           </Card.Body>
           <Card.Footer className="text-footer">Submitted by {user.email}</Card.Footer>
